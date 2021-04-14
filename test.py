@@ -8,7 +8,7 @@ from sklearn.utils import shuffle
 
 data = pd.read_csv("student-mat.csv", sep=";")
 
-data = data[["G1", "G2", "G3", "studytime", "failures", "absences", "age", "goout"]]
+data = data[["G1", "G2", "G3", "studytime", "failures", "absences"]]
 # print(data)
 
 predict = "G3"
@@ -29,3 +29,6 @@ print(acc)
 # print('Coefficient: \n', linear.intercept_)
 
 predictions = linear.predict(x_test)
+
+for x in range(len(predictions)):
+    print(predictions[x], x_test[x], y_test[x])
